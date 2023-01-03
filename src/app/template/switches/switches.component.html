@@ -1,1 +1,54 @@
-<p>switches works!</p>
+<h2>Template <small>Switches</small></h2>
+<hr>
+
+<form #miFormulario="ngForm">
+    <!-- Radio -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Genero</label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="persona.genero" value="M" type="radio" name="radioGenero"
+                    id="masculioRadio" required>
+                <label class="form-check-label" for="masculioRadio">
+                    Masculino
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" [(ngModel)]="persona.genero" value="F" type="radio" name="radioGenero"
+                    id="femeninoRadio" required>
+                <label class="form-check-label" for="femeninoRadio">
+                    Femenino
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Switch -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Notificaciones </label>
+        <div class="col-sm-9">
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input" type="checkbox" name="notificaciones"
+                    [(ngModel)]="persona.notificaciones" role="switch" id="flexSwitchCheckChecked">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Quiero recibir notificaciones</label>
+            </div>
+        </div>
+    </div>
+    <!-- Checks -->
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" name="terminos" [(ngModel)]="terminosYCondiciones" required
+                    type="checkbox" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Términos y condiciones
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" [disabled]="miFormulario.invalid">Guardar</button>
+        </div>
+    </div>
+</form>
